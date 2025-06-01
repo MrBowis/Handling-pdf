@@ -40,7 +40,7 @@ const Sidebar = () => {
         <Link to="/merge" className={navClasses("/merge")}>
           <Layers className="text-2xl" />
         </Link>
-        <Link to="/number" className={navClasses("/number")}>
+        <Link to="/enumerate" className={navClasses("/number")}>
           <ListOrdered className="text-2xl" />
         </Link>
         <Link to="/security" className={navClasses("/security")}>
