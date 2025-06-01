@@ -1,0 +1,1 @@
+Representa las vistas completas accesibles por rutas. Cada página puede usar layouts, hooks y componentes.

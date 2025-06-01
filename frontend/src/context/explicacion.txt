@@ -1,0 +1,1 @@
+Almacena los archivos de React Context que permiten compartir estado entre distintos componentes o páginas

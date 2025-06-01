@@ -1,0 +1,1 @@
+Define las rutas de la aplicación y qué componente debe mostrarse en cada una. Se usa junto a React Router. (EN CASO DE USAR REACT ROUTER)
