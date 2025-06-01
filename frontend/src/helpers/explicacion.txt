@@ -1,0 +1,1 @@
+Funciones utilitarias puras que realizan tareas comunes, como formateo de texto o validación, o solicitudes a API como el helpHtp creado sin usar hooks ni estado.
