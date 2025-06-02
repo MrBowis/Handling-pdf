@@ -1,1 +1,0 @@
-Define la estructura base de distintas secciones de la app, como un layout con navbar y footer o uno solo para herramientas.

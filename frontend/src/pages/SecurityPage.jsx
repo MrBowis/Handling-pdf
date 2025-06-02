@@ -1,5 +1,6 @@
 // SecurityPage.jsx
 import { useState } from "react";
+import { apiServices } from "../services/apiServices";
 
 export default function SecurityPage() {
     const [pdf, setPdf] = useState(null);
@@ -7,26 +8,20 @@ export default function SecurityPage() {
     const [lock, setLock] = useState(true);
 
     const handleSubmit = async () => {
-        const formData = new FormData();
-        const lockAction = lock ? "secure/block/" : "secure/unblock/";
-        const name = lock ? "locked.pdf" : "unlocked.pdf";
-        formData.append("pdf", pdf);
-        formData.append("password", password);
+    if (!pdf || !password) {
+        alert("All fields required");
+        return;
+    }
 
-        try {
-            const response = await fetch(`http://127.0.0.1:8000/api/pdf-handler/${lockAction}`, {
-                method: 'POST',
-                body: formData,
-            });
-            const blob = await response.blob();
-            const url = window.URL.createObjectURL(blob);
-            const link = document.createElement('a');
-            link.href = url;
-            link.download = name;
-            link.click();
-        } catch (error) {
-            console.error('Error uploading files', error);
-        }
+    const formData = new FormData();
+    formData.append("pdf", pdf);
+    formData.append("password", password);
+
+    try {
+        await apiServices.lockPdf(formData, lock); 
+    } catch (error) {
+        console.error("Error uploading files", error);
+    }
     };
 
     return (

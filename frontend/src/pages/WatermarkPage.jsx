@@ -27,6 +27,13 @@ export default function WatermarkPage() {
         }
     };
 
+    const handlePdfFile = ()=>{
+        setPdfFile(e.target.files[0])
+    }
+
+    const handleImageFile = ()=>{
+        setImageFile(e.target.files[0])
+    }
     return (
         <div className="flex flex-col items-center justify-center h-screen bg-gradient-to-br from-gray-300 to-gray-500 rounded-xl">
             <h1 className="text-5xl font-bold mb-10">Watermark</h1>
