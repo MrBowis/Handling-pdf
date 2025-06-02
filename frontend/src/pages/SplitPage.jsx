@@ -30,7 +30,7 @@ export default function SplitPage() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-gradient-to-br from-gray-300 to-gray-500 rounded-xl">
+    <div className="flex flex-col items-center justify-center h-screen bg-gradient-to-br from-gray-50 to-green-300 rounded-xl">
       <h1 className="text-5xl font-bold mb-10">Split PDF</h1>
       <div className="flex gap-8 mb-10">
         <CardUpload handleFileChange={handleFileChange} />

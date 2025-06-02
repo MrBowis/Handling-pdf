@@ -39,7 +39,7 @@ export default function MergePage() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-gradient-to-br from-gray-300 to-gray-500 rounded-xl">
+    <div className="flex flex-col items-center justify-center h-screen bg-gradient-to-br from-gray-50 to-purple-300 rounded-xl">
       <h1 className="text-5xl font-bold mb-10">Merge PDFs</h1>
       <div className="flex gap-8 mb-10">
         <CardUpload handleFileChange={handleFileChange} />
@@ -74,7 +74,7 @@ export default function MergePage() {
       </div>
       <button
         onClick={handleSubmit}
-        className="bg-green-500 text-white px-6 py-2 rounded-xl hover:bg-green-600"
+        className="bg-purple-500 text-white px-6 py-2 rounded-xl hover:bg-purple-600"
       >
         Merge
       </button>

@@ -35,7 +35,7 @@ export default function WatermarkPage() {
         setImageFile(e.target.files[0])
     }
     return (
-        <div className="flex flex-col items-center justify-center h-screen bg-gradient-to-br from-gray-300 to-gray-500 rounded-xl">
+        <div className="flex flex-col items-center justify-center h-screen bg-gradient-to-br from-gray-50 to-blue-500 rounded-xl">
             <h1 className="text-5xl font-bold mb-10">Watermark</h1>
             <div className="flex gap-8 mb-10">
                 <div className="bg-white p-6 rounded-3xl border-2 border-green-400">
@@ -47,7 +47,7 @@ export default function WatermarkPage() {
                     <input type="file" accept="image/*" onChange={(e) => setImageFile(e.target.files[0])} className="rounded-md" />
                 </div>
             </div>
-            <button onClick={handleSubmit} className="bg-green-500 text-white px-6 py-2 rounded-xl hover:bg-green-600">Add Watermark</button>
+            <button onClick={handleSubmit} className="bg-blue-500 text-white px-6 py-2 rounded-xl hover:bg-blue-600">Add Watermark</button>
         </div>
     );
 }

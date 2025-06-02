@@ -31,7 +31,7 @@ export default function EnumeratePage() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-gradient-to-br from-gray-300 to-gray-500 rounded-xl">
+    <div className="flex flex-col items-center justify-center h-screen bg-gradient-to-br from-gray-50 to-orange-300 rounded-xl">
       <h1 className="text-5xl font-bold mb-10">Enumerate</h1>
       <CardUpload handleFileChange={handleFileChange} />
       <div className="flex gap-4 mb-6 mt-5">
@@ -56,7 +56,7 @@ export default function EnumeratePage() {
       </div>
       <button
         onClick={handleSubmit}
-        className="bg-green-500 text-white px-6 py-2 rounded-xl hover:bg-green-600"
+        className="bg-orange-500 text-white px-6 py-2 rounded-xl hover:bg-orange-600"
       >
         Enumerate
       </button>
