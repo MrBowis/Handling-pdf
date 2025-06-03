@@ -1,1 +1,0 @@
-Incluye custom hooks que encapsulan lógica reutilizable con estado o efectos, como carga de archivos o modales.

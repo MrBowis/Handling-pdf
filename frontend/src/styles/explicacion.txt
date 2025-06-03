@@ -1,1 +1,0 @@
-Agrupa los estilos globales, variables CSS, temas personalizados o archivos SCSS si se usa
