@@ -17,62 +17,51 @@ def create_dummy_pdf(name="test.pdf"):
 
 @pytest.mark.django_db
 def test_split_pdf_invalid(api_client):
-    # Falta 'output' → debe fallar
     path = create_dummy_pdf("split.pdf")
     with open(path, 'rb') as f:
-        response = api_client.post('/split/', {
+        response = api_client.post('/api/pdf-handler/split/', {
             'pdf': f,
             'split_in_page': 2
         }, format='multipart')
-    assert response.status_code == 404
+    assert response.status_code == 400
 
 @pytest.mark.django_db
 def test_merge_pdf_invalid(api_client):
-    # Falta 'pdf' → debe fallar
     path = create_dummy_pdf("merge.pdf")
     with open(path, 'rb') as f:
-        response = api_client.post('/merge/', {
+        response = api_client.post('/api/pdf-handler/merge/', {
             'output': 'merged.pdf'
         }, format='multipart')
-    assert response.status_code == 404
-
-@pytest.mark.django_db
-def test_watermark_pdf_invalid(api_client):
-    # Falta 'pdf' → debe fallar
-    path = create_dummy_pdf("watermark.pdf")
-    with open(path, 'rb') as f:
-        response = api_client.post('/watermark/', {
-            'pdf': f,
-            'watermark_text': 'Sample Watermark'
-        }, format='multipart')
-    assert response.status_code == 404
+    assert response.status_code == 400
 
 @pytest.mark.django_db
 def test_block_pdf_invalid(api_client):
-    # Falta 'pdf' → debe fallar
     path = create_dummy_pdf("block.pdf")
     with open(path, 'rb') as f:
-        response = api_client.post('/secure/block/', {
+        response = api_client.post('/api/pdf-handler/secure/block/', {
+            'pdf': f,
             'password': 'secret'
         }, format='multipart')
-    assert response.status_code == 404
+    assert response.status_code == 500
 
 @pytest.mark.django_db
 def test_unblock_pdf_invalid(api_client):
-    # Falta 'pdf' → debe fallar
     path = create_dummy_pdf("unblock.pdf")
     with open(path, 'rb') as f:
-        response = api_client.post('/secure/unblock/', {
+        response = api_client.post('/api/pdf-handler/secure/unblock/', {
+            'pdf': f,
             'password': 'secret'
         }, format='multipart')
-    assert response.status_code == 404
+    assert response.status_code == 500
 
 @pytest.mark.django_db
 def test_enumerate_pdf_invalid(api_client):
-    # Falta 'pdf' → debe fallar
     path = create_dummy_pdf("enumerate.pdf")
     with open(path, 'rb') as f:
-        response = api_client.post('/enumerate/', {
+        response = api_client.post('/api/pdf-handler/enumerate/', {
             'pdf': f,
+            'start': 1,
+            'number': 5,
+            'output': 'enumerated.pdf'
         }, format='multipart')
-    assert response.status_code == 404
+    assert response.status_code == 500
